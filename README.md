@@ -45,7 +45,7 @@ CI/CD Green Build
 
 [![Build and Test](https://github.com/ST10475058/RaceDay-POE-2/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/ST10475058/RaceDay-POE-2/actions/workflows/build-and-test.yml)
 
-The GitHub Actions workflow builds the project and runs all unit tests on every push.
+The GitHub Actions workflow builds the project and runs all unit tests on every push. All steps pass successfully.
 
 ## Video Walkthrough
 
