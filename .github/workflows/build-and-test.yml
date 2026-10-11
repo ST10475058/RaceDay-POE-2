@@ -26,4 +26,14 @@ jobs:
       run: dotnet build RaceDay.API.sln --no-restore --configuration Release
 
     - name: Run tests
-      run: dotnet test RaceDay.API.sln --no-build --configuration Release --verbosity normal
+      run: |
+        mapfile -t test_projects < <(find RaceDay.Tests -type f -name "*.csproj")
+
+        if [ ${#test_projects[@]} -eq 0 ]; then
+          echo "No test projects found under RaceDay.Tests. Skipping test execution."
+          exit 0
+        fi
+
+        for project in "${test_projects[@]}"; do
+          dotnet test "$project" --configuration Release --verbosity normal
+        done
