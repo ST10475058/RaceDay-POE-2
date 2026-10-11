@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37710.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaceDay.API", "RaceDay.API\RaceDay.API.csproj", "{7428BE89-85FA-4D6D-AAE9-6E374AF7B458}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7428BE89-85FA-4D6D-AAE9-6E374AF7B458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7428BE89-85FA-4D6D-AAE9-6E374AF7B458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7428BE89-85FA-4D6D-AAE9-6E374AF7B458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7428BE89-85FA-4D6D-AAE9-6E374AF7B458}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C95C1E0-55CE-4B80-81DD-466EE2168D9B}
+	EndGlobalSection
+EndGlobal
