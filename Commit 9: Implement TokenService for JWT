@@ -1,0 +1,12 @@
+git commit --allow-empty -m "feat: implement TokenService for JWT generation
+
+TokenService:
+- ITokenService interface for dependency injection
+- CreateToken(email, role, userId) method
+- Claims: Email, Role, NameIdentifier
+- Signed with HS256
+- Token valid for 8 hours
+
+Enables role-based authorization across the API.
+
+This is commit #9 of 20."
