@@ -1,0 +1,20 @@
+git commit --allow-empty -m "feat: add Enrolment and Result models matching Part 1 ERD
+
+Enrolment model (associative entity):
+- EnrolmentID INT IDENTITY PK
+- ParticipantID INT FK
+- CategoryID INT FK
+- EnrolmentDate DATETIME (defaults to DateTime.UtcNow)
+- Status NVARCHAR(20) DEFAULT 'Confirmed'
+
+Result model (1:1 with Enrolment):
+- ResultID INT IDENTITY PK
+- EnrolmentID INT FK UNIQUE (enforces 1:1)
+- RecordedByOrganiserID INT FK
+- FinishTime TIME NOT NULL
+- Position INT NULL
+- RecordedAt (defaults to DateTime.UtcNow)
+
+All 6 entities now defined.
+
+This is commit #6 of 20."
