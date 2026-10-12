@@ -1,0 +1,17 @@
+git commit --allow-empty -m "test: add xUnit test project with controller tests
+
+RaceDay.Tests project:
+- References RaceDay.API
+- EF Core InMemory database
+- FluentAssertions for readable assertions
+- Moq for mocking
+- Newtonsoft.Json for testhost
+
+Tests:
+- AuthControllerTests (register, login)
+- EventsControllerTests (create, update, role checks)
+- EnrolmentsControllerTests (enrol, conflict, full)
+
+Covers success and failure scenarios.
+
+This is commit #18 of 20."
