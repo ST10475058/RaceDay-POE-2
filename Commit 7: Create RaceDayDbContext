@@ -1,0 +1,21 @@
+git commit --allow-empty -m "feat: create RaceDayDbContext with Part 1 constraints
+
+DbContext configuration:
+- 6 DbSets for all entities
+
+UNIQUE constraints:
+- Organisers.Email
+- Participants.Email
+- Results.EnrolmentID (1:1 relationship)
+- Enrolments (ParticipantID, CategoryID)
+
+CHECK constraints:
+- EventType IN ('Running', 'Walking', 'Cycling')
+- Status IN ('Confirmed', 'Cancelled')
+- Distance > 0
+- MaxParticipants > 0
+- Position IS NULL OR Position > 0
+
+Matches the Part 1 SQL script exactly.
+
+This is commit #7 of 20."
