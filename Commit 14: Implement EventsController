@@ -1,0 +1,15 @@
+git commit --allow-empty -m "feat: implement EventsController with full CRUD
+
+Public:
+- GET /api/events
+- GET /api/events/{id}
+
+Organiser-only:
+- POST /api/events
+- PUT /api/events/{id}
+- DELETE /api/events/{id}
+
+Ownership enforced via JWT OrganiserID check.
+403 Forbidden for other organisers' events.
+
+This is commit #14 of 20."
