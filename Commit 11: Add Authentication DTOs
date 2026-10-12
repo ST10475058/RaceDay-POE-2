@@ -1,0 +1,15 @@
+git commit --allow-empty -m "feat: add authentication DTOs
+
+RegisterDto:
+- FullName, Email, Password, Role
+- Optional: DateOfBirth, PhoneNumber
+
+LoginDto:
+- Email, Password, Role
+
+AuthResponseDto:
+- Token, Role, UserId, FullName, Email
+
+DTOs prevent over-posting and keep entities clean.
+
+This is commit #11 of 20."
