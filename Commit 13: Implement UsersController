@@ -1,0 +1,14 @@
+git commit --allow-empty -m "feat: implement UsersController for profile management
+
+GET /api/users/me:
+- Returns current user's profile
+- Works for both Organisers and Participants
+- [Authorize] enforced
+
+PUT /api/users/me:
+- Updates fullName, phoneNumber, dateOfBirth
+- Validates ownership via JWT claim
+
+Role-aware logic for both roles.
+
+This is commit #13 of 20."
