@@ -1,0 +1,18 @@
+git commit --allow-empty -m "feat: implement CategoriesController
+
+Public:
+- GET /api/events/{eventId}/categories
+
+Organiser-only:
+- POST /api/events/{eventId}/categories
+- PUT /api/categories/{id}
+- DELETE /api/categories/{id}
+
+Validation:
+- Distance > 0
+- MaxParticipants > 0
+- Ownership check
+
+Returns 404 for missing event, 403 for non-owner.
+
+This is commit #15 of 20."
