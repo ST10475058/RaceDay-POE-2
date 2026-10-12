@@ -1,0 +1,19 @@
+git commit --allow-empty -m "feat: implement ResultsController
+
+Organiser-only:
+- POST /api/enrolments/{enrolmentId}/results
+
+Participant-only:
+- GET /api/results/me
+
+Public:
+- GET /api/events/{eventId}/results (ordered by position)
+
+Rules:
+- 404 for missing enrolment
+- 409 for duplicate result
+- 403 when not event owner
+
+All 21 endpoints now implemented.
+
+This is commit #17 of 20."
