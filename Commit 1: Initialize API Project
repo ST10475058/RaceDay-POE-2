@@ -1,0 +1,11 @@
+git commit --allow-empty -m "chore: initialize ASP.NET Core Web API project for Part 2
+
+- Create RaceDay.API project in Visual Studio 2022
+- Target .NET 8.0 with ASP.NET Core Web API template
+- Enable Swagger/OpenAPI support
+- Configure HTTPS for development
+
+This project implements all 21 endpoints from the Part 1 plan.
+
+Author: SIYETHEMBA XULU (ST: 10475058)
+This is commit #1 of 20 for Part 2."
