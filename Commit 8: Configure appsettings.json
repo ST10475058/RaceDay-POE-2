@@ -1,0 +1,12 @@
+git commit --allow-empty -m "feat: configure connection string and JWT settings
+
+appsettings.json:
+- Connection string points to RaceDayDB
+- JWT key (256-bit minimum for HS256)
+- JWT Issuer: RaceDayAPI
+- JWT Audience: RaceDayClient
+- Token expiry: 8 hours
+
+Same database name as Part 1 SQL script.
+
+This is commit #8 of 20."
