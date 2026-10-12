@@ -1,0 +1,16 @@
+git commit --allow-empty -m "feat: implement AuthController with register and login
+
+POST /api/auth/register:
+- Role validation
+- BCrypt password hashing
+- 201 Created with JWT token
+- 400 Bad Request for duplicate email
+
+POST /api/auth/login:
+- BCrypt password verification
+- 200 OK with JWT token
+- 401 Unauthorized for bad credentials
+
+Both endpoints are public.
+
+This is commit #12 of 20."
