@@ -1,0 +1,20 @@
+git commit --allow-empty -m "feat: add Event and Category models matching Part 1 ERD
+
+Event model:
+- EventID INT IDENTITY PK
+- OrganiserID INT FK
+- EventName NVARCHAR(150) NOT NULL
+- EventType NVARCHAR(50) - Running/Walking/Cycling
+- EventDate DATETIME NOT NULL
+- Location NVARCHAR(150) NOT NULL
+- Description NVARCHAR(1000) NULL
+
+Category model:
+- CategoryID INT IDENTITY PK
+- EventID INT FK
+- CategoryName NVARCHAR(100) NOT NULL
+- Distance DECIMAL(6,2) NOT NULL
+- MaxParticipants INT DEFAULT 100
+- Price DECIMAL(8,2) DEFAULT 0
+
+This is commit #5 of 20."
