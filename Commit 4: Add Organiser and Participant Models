@@ -1,0 +1,19 @@
+git commit --allow-empty -m "feat: add Organiser and Participant models matching Part 1 ERD
+
+Organiser model:
+- OrganiserID INT IDENTITY PK
+- FullName NVARCHAR(100) NOT NULL
+- Email NVARCHAR(150) UNIQUE
+- PasswordHash NVARCHAR(255) NOT NULL
+- PhoneNumber NVARCHAR(20) NULL
+- CreatedAt (defaults to DateTime.UtcNow)
+
+Participant model:
+- ParticipantID INT IDENTITY PK
+- FullName, Email (UNIQUE), PasswordHash
+- DateOfBirth DATE NULL (age-category checks)
+- PhoneNumber, CreatedAt
+
+Two separate role tables per Part 1 Section A.
+
+This is commit #4 of 20."
