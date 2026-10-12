@@ -1,0 +1,13 @@
+git commit --allow-empty -m "chore: set up folder structure for API layers
+
+Created folders:
+- Controllers/  (API endpoints)
+- Data/         (DbContext and migrations)
+- DTOs/         (Data Transfer Objects)
+- Models/       (Entity models)
+- Services/     (Business logic)
+- Properties/   (launchSettings)
+
+Layered architecture for clean separation of concerns.
+
+This is commit #3 of 20."
