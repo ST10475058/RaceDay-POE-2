@@ -1,0 +1,13 @@
+git commit --allow-empty -m "chore: install required NuGet packages for Part 2
+
+Installed packages:
+- Microsoft.EntityFrameworkCore.SqlServer (EF Core for SQL Server)
+- Microsoft.EntityFrameworkCore.Tools (migrations)
+- Microsoft.EntityFrameworkCore.Design (design-time)
+- Microsoft.AspNetCore.Authentication.JwtBearer (JWT)
+- BCrypt.Net-Next (password hashing)
+- Swashbuckle.AspNetCore 6.5.0 (Swagger UI)
+- Microsoft.OpenApi 1.6.14 (OpenAPI models)
+- System.IdentityModel.Tokens.Jwt (JWT generation)
+
+This is commit #2 of 20."
