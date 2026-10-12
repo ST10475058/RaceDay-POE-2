@@ -1,0 +1,17 @@
+git commit --allow-empty -m "feat: implement EnrolmentsController
+
+Participant-only:
+- POST /api/categories/{categoryId}/enrolments
+- GET /api/enrolments/me
+
+Organiser-only:
+- GET /api/events/{eventId}/enrolments
+
+Rules:
+- 409 Conflict when already enrolled
+- 400 Bad Request when category full
+- 403 Forbidden when not event owner
+
+Participant identified from JWT token.
+
+This is commit #16 of 20."
