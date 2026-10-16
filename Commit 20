@@ -1,0 +1,19 @@
+git add README.md
+git commit -m "chore: final review and README update for Part 2
+
+Final review completed:
+- All 6 models match Part 1 ERD exactly
+- All constraints implemented (UNIQUE, CHECK)
+- All 21 endpoints from Part 1 plan
+- JWT authentication with role-based access
+- Password hashing with BCrypt
+- Unit tests passing
+- GitHub Actions CI/CD showing green build
+- README updated with CI/CD screenshot, badge, and video walkthrough link
+
+Video walkthrough: https://youtu.be/Gm2C-rUrfNY
+
+Author: SIYETHEMBA XULU (ST: 10475058)
+This completes Part 2 of the RaceDay POE.
+
+This is commit #20 of 20."
