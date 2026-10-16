@@ -49,7 +49,7 @@ The GitHub Actions workflow builds the project and runs all unit tests on every 
 
 ## Video Walkthrough
 
-[Watch the video walkthrough here](https://youtu.be/your-part2-video-link)
+[Watch the video walkthrough here](https://youtu.be/Gm2C-rUrfNY)
 
 ## References
 
@@ -59,3 +59,4 @@ The GitHub Actions workflow builds the project and runs all unit tests on every 
 - Mozilla Developer Network. *HTTP response status codes*. https://developer.mozilla.org/en-US/docs/Web/HTTP/Status (accessed August 2026)
 - Rosebank College. *RaceDay Portfolio of Evidence assignment brief*, 2026
 - Anthropic. *Claude (AI assistant)* – Used for structuring and documentation. All design decisions reviewed by the author.
+- 
