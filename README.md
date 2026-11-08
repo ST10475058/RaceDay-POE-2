@@ -1,62 +1,60 @@
-# RaceDay — Part 2: RESTful API
+# RaceDay — Part 3: MVC Web Application
 
-RaceDay is a full-stack, web-based event management system for the South African road running, walking, and cycling community. Part 2 implements the RESTful API that powers RaceDay, built with ASP.NET Core 8.0 and Entity Framework Core (Code-First), matching the Part 1 ERD and endpoint plan exactly.
+RaceDay is a full-stack, web-based event management system for the South African road running, walking, and cycling community. Part 3 implements the MVC Web Frontend that consumes the RESTful API, built with ASP.NET Core 8.0 MVC, Razor Views, and Bootstrap. It provides a polished, role-specific interface for Organisers and Participants, and is fully containerised using Docker.
 
-**Repository:** https://github.com/ST10475058/RaceDay-POE-2.git
+**Repository:** https://github.com/ST10475058/RaceDay-POE-3.git
 
 ## Roles
 
-- **Organiser** – creates, edits, and deletes events; manages categories; captures results; views all enrolments for their events.
-- **Participant** – browses events, enters events by selecting a category, views their own enrolments, and tracks personal results.
+- **Organiser** – creates, edits, and deletes events; manages categories; captures results; views all enrolments for their events. Includes file upload for event banners.
+- **Participant** – browses events, enters events by selecting a category, views their own enrolments, and tracks personal results. Includes profile management.
 
-## Setup and Run
+## Setup and Run (Local)
 
-1. Clone the repository:
-2. 2. Open `RaceDay.API.sln` in Visual Studio 2022.
-3. Update the connection string in `appsettings.json` if needed.
-4. Run migrations (Package Manager Console): `Update-Database`
-5. Press **F5** to run. Swagger opens at `https://localhost:7XXX/swagger`.
+1. Clone the repository: `git clone https://github.com/ST10475058/RaceDay-POE-3.git`
+2. Open the solution file (`.sln`) in Visual Studio 2022.
+3. Ensure the `RaceDay.API` and `RaceDay.Web` projects are both set as **Multiple Startup Projects**.
+4. Open the Package Manager Console, select `RaceDay.API` as the default project, and run: `Update-Database`
+5. Press **F5** to run. Both Swagger (API) and the MVC Web App will launch.
 
 **Prerequisites:** .NET 8.0 SDK · SQL Server (LocalDB/Express) · Visual Studio 2022
 
-## API Endpoints
+## Docker Setup
 
-- **Auth (public):** `POST /api/auth/register` · `POST /api/auth/login`
-- **Profile:** `GET /api/users/me` · `PUT /api/users/me`
-- **Events:** `GET /api/events` · `GET /api/events/{id}` (public) · `POST /api/events` · `PUT /api/events/{id}` · `DELETE /api/events/{id}` (Organiser)
-- **Categories:** `GET /api/events/{eventId}/categories` (public) · `POST /api/events/{eventId}/categories` · `PUT /api/categories/{id}` · `DELETE /api/categories/{id}` (Organiser)
-- **Enrolments:** `POST /api/categories/{categoryId}/enrolments` (Participant) · `GET /api/enrolments/me` (Participant) · `GET /api/events/{eventId}/enrolments` (Organiser)
-- **Results:** `POST /api/enrolments/{enrolmentId}/results` (Organiser) · `GET /api/results/me` (Participant) · `GET /api/events/{eventId}/results` (public)
+The MVC application is fully containerised.
 
-## Authentication
+1. Build the Docker image:
+   `docker build -t raceday-web -f RaceDay.Web/Dockerfile .`
+2. Run the container:
+   `docker run -d -p 8080:80 --name raceday-web-container raceday-web`
+3. Access the application at: `http://localhost:8080`
 
-JWT Bearer tokens issued on register and login. Passwords hashed with BCrypt.Net-Next. Role-based access enforced via `[Authorize(Roles = "...")]`.
+## MVC Architecture & Features
 
-## Unit Tests
-
-Run tests:
-Tests cover registration, login, event management, role-based access rejection, and event enrolments.
+- **No Direct Database Access:** The MVC application does not connect to a database. All data operations are handled via HTTP requests to the API using the `RaceDayApiClient` service.
+- **Session Management:** Upon successful login, the JWT token and user role are stored securely in the session. The navigation bar dynamically updates based on the user's role.
+- **File Handling:** Organiser banner uploads are sent to the API via `multipart/form-data`. The API handles the storage and returns the URL for the MVC frontend to display.
+- **UI Design:** Energetic, sporting theme using Bootstrap 5 and custom CSS with colour-coded statuses (green for Confirmed).
 
 ## CI/CD
 
 CI/CD Green Build
 
-![Build and Test](part2-green-build.png)
+![Build and Test](part3-green-build.png)
 
-[![Build and Test](https://github.com/ST10475058/RaceDay-POE-2/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/ST10475058/RaceDay-POE-2/actions/workflows/build-and-test.yml)
+[![Build and Test](https://github.com/ST10475058/RaceDay-POE-3/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/ST10475058/RaceDay-POE-3/actions/workflows/build-and-test.yml)
 
-The GitHub Actions workflow builds the project and runs all unit tests on every push. All steps pass successfully.
+The GitHub Actions workflow builds the entire solution (API and MVC) on every push. All steps pass successfully.
 
 ## Video Walkthrough
 
-[Watch the video walkthrough here](https://youtu.be/Gm2C-rUrfNY)
+[Watch the video walkthrough here](INSERT_YOUR_YOUTUBE_LINK_HERE)
 
 ## References
 
-- Microsoft Learn. *ASP.NET Core Web API*. https://learn.microsoft.com/en-us/aspnet/core/web-api/ (accessed October 2026)
-- Microsoft Learn. *Entity Framework Core*. https://learn.microsoft.com/en-us/ef/core/ (accessed October 2026)
-- Microsoft Learn. *JWT Bearer Authentication*. https://learn.microsoft.com/en-us/aspnet/core/security/authentication/ (accessed October 2026)
-- Mozilla Developer Network. *HTTP response status codes*. https://developer.mozilla.org/en-US/docs/Web/HTTP/Status (accessed August 2026)
+- Microsoft Learn. *ASP.NET Core MVC*. https://learn.microsoft.com/en-us/aspnet/core/mvc/ (accessed October 2026)
+- Microsoft Learn. *HttpClient in .NET*. https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient (accessed October 2026)
+- Microsoft Learn. *Docker for ASP.NET Core*. https://learn.microsoft.com/en-us/dotnet/core/docker/ (accessed October 2026)
+- Bootstrap. *Bootstrap 5 Documentation*. https://getbootstrap.com/docs/5.3/ (accessed October 2026)
 - Rosebank College. *RaceDay Portfolio of Evidence assignment brief*, 2026
 - Anthropic. *Claude (AI assistant)* – Used for structuring and documentation. All design decisions reviewed by the author.
-- 
